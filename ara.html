@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semangat untuk Ara!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            color: #333;
+        }
+
+        .card {
+            background: #ffffffcc;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 500px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        #quote {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 25px;
+            min-height: 50px;
+            transition: all 0.4s ease;
+        }
+
+        button {
+            padding: 12px 28px;
+            font-size: 1rem;
+            background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+            color: #333;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #555;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Semangat Ara!</h1>
+        <p>Gagal SNBP bukan akhir cerita kamu, Ara 🌸</p>
+        <div id="quote">Klik tombol di bawah ya, ada pesan spesial buat kamu 💌</div>
+        <button onclick="generateQuote()">Baca Pesan 💖</button>
+    </div>
+
+    <script>
+        const quotes = [
+            "Ara, kegagalan ini cuma jeda. Kamu pasti bisa raih mimpi kamu di waktu yang tepat! ✨",
+            "Ara hebat, kamu kuat! Jalan kamu belum berakhir, justru baru mulai. 🌈",
+            "Semangat ya Ara! Tuhan pasti sudah siapkan sesuatu yang lebih indah. 💐",
+            "Banyak yang sayang sama kamu, Ara! Jangan biarkan ini padamkan semangatmu. 💖",
+            "Ara, kamu bukan gagal. Kamu hanya lagi dipersiapkan untuk sesuatu yang lebih besar! 🚀",
+            "Tersenyumlah, Ara. Kamu jauh lebih berharga dari sekadar hasil SNBP. 🌻",
+            "Bangkit lagi yuk, Ara! Kamu punya potensi besar yang dunia tunggu-tunggu. 🌟"
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quoteElement = document.getElementById("quote");
+            quoteElement.style.opacity = 0;
+            setTimeout(() => {
+                quoteElement.innerText = quotes[randomIndex];
+                quoteElement.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>
